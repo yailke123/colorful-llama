@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collector : MonoBehaviour
+public class TriggerManager : MonoBehaviour
 {
     public CharacterController2D controller2D;
 

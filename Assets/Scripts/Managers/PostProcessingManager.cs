@@ -4,16 +4,19 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PostProcessingManager : MonoBehaviour {
     [SerializeField] private PostProcessVolume globalPP;
-    private ColorGrading _colorGrading;
+    private PostProcessProfile _postProcessProfile;
 
     private void Awake() {
-        _colorGrading = globalPP.profile.GetSetting<ColorGrading>(); 
+        _postProcessProfile = globalPP.profile;
     }
 
-    
-
     public void DeSaturateGreen() {
-        _colorGrading.hueVsSatCurve = new SplineParameter();
+        ColorGrading colorGrading;
+        _postProcessProfile.TryGetSettings(out colorGrading);
+
+        Spline x = new Spline(new AnimationCurve(), 2, false, new Vector2(0.2f, 0.2f) );
+
+        colorGrading.hueVsSatCurve.value = x;
     }
 
     private void Update() {

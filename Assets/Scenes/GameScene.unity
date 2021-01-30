@@ -1595,6 +1595,10 @@ MonoBehaviour:
   AudioClipArray:
   - {fileID: 8300000, guid: f8b144abb2b494cdc9fcdb7469afa9c7, type: 3}
   - {fileID: 8300000, guid: 0ee599222914d4724821cb06fe983ebc, type: 3}
+  - {fileID: 8300000, guid: 9a8281538a0e64a08a4797ed41d678d7, type: 3}
+  - {fileID: 8300000, guid: b85eee70a5f70443da2bbb31173eb57b, type: 3}
+  - {fileID: 8300000, guid: 13c2fc53be3254be5bc9b4415408c1cc, type: 3}
+  - {fileID: 8300000, guid: 3ed635b8cff1b459e97ded4eff6bab6c, type: 3}
 --- !u!82 &1277584076
 AudioSource:
   m_ObjectHideFlags: 0

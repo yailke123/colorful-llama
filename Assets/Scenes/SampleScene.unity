@@ -839,10 +839,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1446020128}
   - component: {fileID: 1446020127}
-  - component: {fileID: 1446020129}
   - component: {fileID: 1446020131}
   - component: {fileID: 1446020130}
   - component: {fileID: 1446020132}
+  - component: {fileID: 1446020129}
   m_Layer: 8
   m_Name: DoorKnob
   m_TagString: Untagged

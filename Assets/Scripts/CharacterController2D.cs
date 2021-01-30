@@ -107,6 +107,11 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
+			// If we are moving and on the ground make footstep sounds
+			if(m_Grounded && Mathf.Abs(move) > 0){
+				SoundManager.Instance.PlaySoundWithName("Footsteps", true);   
+			}
+
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
@@ -128,6 +133,7 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			SoundManager.Instance.PlaySoundWithName("Jump");   
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

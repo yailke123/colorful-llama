@@ -12,6 +12,11 @@ public class SoundManager : MonoBehaviour
 	public float LowPitchRange = .95f;
 	public float HighPitchRange = 1.05f;
 
+    // For keeping track of audioclips
+    public AudioClip[] AudioClipArray;
+    public Dictionary<string, int> AudioClipLibrary = new Dictionary<string, int>();
+
+
 	// Singleton instance.
 	public static SoundManager Instance = null;
 	
@@ -22,6 +27,8 @@ public class SoundManager : MonoBehaviour
 		if (Instance == null)
 		{
 			Instance = this;
+            AudioClipLibrary.Add("Explosion", 0);
+            AudioClipLibrary.Add("Footsteps", 1);
 		}
 		//If an instance already exists, destroy whatever this object is to enforce the singleton.
 		else if (Instance != this)
@@ -46,6 +53,14 @@ public class SoundManager : MonoBehaviour
 		MusicSource.clip = clip;
 		MusicSource.Play();
 	}
+
+    // Play the sound effect with the given name from Sounds folder.
+    public void PlaySoundWithName(string effectName){
+        if(AudioClipLibrary.ContainsKey(effectName)){
+            int AudioClipIndex = AudioClipLibrary[effectName];
+            PlayMusic(AudioClipArray[AudioClipIndex]);
+        }
+    }
 
 	// Play a random clip from an array, and randomize the pitch slightly.
 	public void RandomSoundEffect(params AudioClip[] clips)

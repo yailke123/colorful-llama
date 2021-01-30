@@ -28,10 +28,11 @@ namespace Throwing {
             switch (other.gameObject.tag)
             {
                 case "Enemy":
+                    //TODO explosion animation :)
+                    SoundManager.Instance.PlaySoundWithName("Explosion");  
                     other.gameObject.GetComponent<EnemyLogic>().Die();
                     break;
                 case "Ground":
-                    //TODO explosion animation :)  
                     gameObject.SetActive(false);
                     GoBackToPool();
                     break;

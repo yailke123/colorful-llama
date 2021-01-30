@@ -22,6 +22,9 @@ public class TriggerManager : MonoBehaviour
                 controller2D.UpdateCheckPoint(other.transform);
                 other.enabled = false;
                 break;
+            case "Enemy":
+                controller2D.StopAndGoToLastCheckPoint();
+                break;
         }
     }
     

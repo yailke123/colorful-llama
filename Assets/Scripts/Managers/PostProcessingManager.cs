@@ -13,6 +13,17 @@ public class PostProcessingManager : MonoBehaviour {
     
 
     public void DeSaturateGreen() {
-        _colorGrading.hueVsSatCurve.Interp();
+        _colorGrading.hueVsSatCurve = new SplineParameter();
+    }
+
+    private void Update() {
+        // TODO: Delete
+        if (Input.GetKeyDown("q")) {
+            DeSaturateGreen();
+        }
+
+        if (Input.GetKeyDown("w")) {
+
+        }
     }
 }

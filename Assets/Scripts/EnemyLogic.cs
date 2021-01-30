@@ -16,7 +16,7 @@ public class EnemyLogic : MonoBehaviour
     void Update()
     {
         Vector3 distanceToTravel = currentDirection * Time.deltaTime * speedMultiplier;
-        
+
         // If it is time to turn around 
         if(distanceToTravel.magnitude + distanceTravelled > distanceLimitInSingleDirection){
             currentDirection = -1 * currentDirection; 
@@ -26,5 +26,9 @@ public class EnemyLogic : MonoBehaviour
 
         transform.Translate(distanceToTravel);
         distanceTravelled += distanceToTravel.magnitude;
+    }
+
+    public void Die(){
+        Destroy (gameObject);
     }
 }

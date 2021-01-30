@@ -8,6 +8,8 @@ TagManager:
   - Spike
   - Checkpoint
   - Enemy
+  - Throwable
+  - Ground
   layers:
   - Default
   - TransparentFX

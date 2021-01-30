@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerManager : MonoBehaviour
+public class TriggerAndCollisionManager : MonoBehaviour
 {
     public CharacterController2D controller2D;
 
@@ -22,6 +22,15 @@ public class TriggerManager : MonoBehaviour
                 controller2D.UpdateCheckPoint(other.transform);
                 other.enabled = false;
                 break;
+            case "Throwable":
+                break;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
             case "Enemy":
                 controller2D.StopAndGoToLastCheckPoint();
                 break;

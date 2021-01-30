@@ -12,6 +12,10 @@ namespace Throwing {
             myTransform.rotation = origination.rotation;
         }
 
+        private void Awake(){
+            gameObject.tag = "Throwable";
+        }
+
         public void Init(Queue<BaseThrowable> pool) {
             _pool = pool;
         }
@@ -20,8 +24,18 @@ namespace Throwing {
             _pool.Enqueue(this);
         }
 
-        private void OnCollisionEnter(Collision other) {
-            // Todo: check for collision with the ground.
+        private void OnCollisionEnter2D(Collision2D other) {
+            switch (other.gameObject.tag)
+            {
+                case "Enemy":
+                    other.gameObject.GetComponent<EnemyLogic>().Die();
+                    break;
+                case "Ground":
+                    //TODO explosion animation :)  
+                    gameObject.SetActive(false);
+                    GoBackToPool();
+                    break;
+            }
         }
     }
 }

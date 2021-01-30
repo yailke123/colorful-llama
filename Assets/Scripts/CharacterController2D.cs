@@ -135,13 +135,11 @@ public class CharacterController2D : MonoBehaviour
 	
 	// Given a set of coordinates set that as the next starting point 
 	public void UpdateCheckPoint(Transform newCheckpoint){
-		print("update checkpoint");
 		lastCheckpoint = newCheckpoint;
 	}
 
 	// Go to last checkpoint will be called when dying and also manually(R button)
 	public void StopAndGoToLastCheckPoint(){
-		print("gotolast checkpoint");
 		// (Try to) Stop moving
 		m_Rigidbody2D.velocity = Vector3.zero;
 		// Go to checkpoint

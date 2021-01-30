@@ -4,9 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller2D;
     public float runSpeed = 40f;
-    public float jumpMultiplier = 10f; //TODO tweak
     private float horizontalMove = 0f;
-    private float verticalMove = 0f;
+    //private float verticalMove = 0f;
+    private bool isJump = false;
     
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        verticalMove = Input.GetAxisRaw("Vertical") * jumpMultiplier;
+        isJump = Input.GetAxisRaw("Vertical") > 0; 
     }
 
     private void FixedUpdate()
     {
-        controller2D.Move(horizontalMove * Time.fixedDeltaTime, false, false);
-        controller2D.Move(verticalMove * Time.fixedDeltaTime, false, true);
+        controller2D.Move(horizontalMove * Time.fixedDeltaTime, false, isJump);
     }
 }

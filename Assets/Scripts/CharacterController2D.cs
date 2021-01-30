@@ -19,6 +19,8 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	private Vector2 lastCheckpoint = new Vector2(0.0f, 0.0f); // Initially this is the starting point
+
 	[Header("Events")]
 	[Space]
 
@@ -132,6 +134,17 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	// Given a set of coordinates set that as the next starting point 
+	public void UpdateCheckPoint(Vector2 newCheckpoint){
+		print("update checkpoint");
+		lastCheckpoint = newCheckpoint;
+	}
+
+	// Go to last checkpoint will be called when dying and also manually(R button fln)
+	public void GoToLastCheckPoint(){
+		print("gotolast checkpoint");
+		// transform translate (lastCheckpoint) gibi bişe
+	}
 
 	private void Flip()
 	{

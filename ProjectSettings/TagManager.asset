@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ColorChanger
+  - Spike
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -5,28 +5,29 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-
-    // [SerializeField] private SpriteRenderer renderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public CharacterController2D controller2D;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("TRIGGEEEEER");
-        if(other.gameObject.CompareTag("ColorChanger"))
+
+        switch (other.gameObject.tag)
         {
-            GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
-            Destroy(other.gameObject);
-        }    
+            case "ColorChanger":
+                GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
+                Destroy(other.gameObject);
+                break;
+            case "Spike":
+                print("öldün");
+                // Take the user back to last checkpoint 
+                controller2D.GoToLastCheckPoint();
+                break;
+            case "Checkpoint":
+                print("checkpointe geldin");
+                //  Update user checkpoint 
+                controller2D.UpdateCheckPoint(other.transform.position);
+                break;
+        }
     }
     
 }

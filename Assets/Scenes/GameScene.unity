@@ -289,6 +289,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.11303595, y: 0.09550811}
   m_EdgeRadius: 0
+--- !u!1 &226101703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226101704}
+  m_Layer: 0
+  m_Name: Throwables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226101704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226101703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.447792, y: -0.45081928, z: -1.949699}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &236881236
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +900,8 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
+  - m_Collider: {fileID: 0}
+    m_ColliderPaths: []
   - m_Collider: {fileID: 646230375}
     m_ColliderPaths:
     - - X: 10000000
@@ -1213,6 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c9970db88f4ce2984023d5661cf38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skinManager: {fileID: 1400585925}
 --- !u!4 &1400585927
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,6 +1275,7 @@ GameObject:
   - component: {fileID: 1446020132}
   - component: {fileID: 1446020129}
   - component: {fileID: 1446020133}
+  - component: {fileID: 1446020134}
   m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
@@ -1313,6 +1347,7 @@ Transform:
   m_Children:
   - {fileID: 697332345}
   - {fileID: 258372677}
+  - {fileID: 1531912585}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1408,6 +1443,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller2D: {fileID: 1446020129}
+--- !u!114 &1446020134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446020126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716309f851e0a584aae95c02e6af28d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinManager: {fileID: 1400585925}
+  throwingParent: {fileID: 226101704}
+  throwingSource: {fileID: 1531912585}
+--- !u!1 &1531912584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531912585}
+  m_Layer: 8
+  m_Name: ThrowSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1531912585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531912584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.038, y: 0.033, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1446020128}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919816546
 GameObject:
   m_ObjectHideFlags: 0

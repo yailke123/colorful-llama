@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15079b88bdb948ba9a5c4db2b2b1ddb1, type: 3}
   m_Name: LlamaSkinConfig
   m_EditorClassIdentifier: 
-  spitSprite: {fileID: 21300000, guid: dad2c0ffae9cfd64a8d6ea74ea0603b6, type: 3}
+  throwingItemPrefab: {fileID: 176335336159518400, guid: 7a6f117d604a51b4cab0a558e4ce29db, type: 3}

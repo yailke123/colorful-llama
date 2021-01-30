@@ -9,8 +9,6 @@ public class Collector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("TRIGGEEEEER");
-
         switch (other.gameObject.tag)
         {
             case "ColorChanger":
@@ -18,14 +16,11 @@ public class Collector : MonoBehaviour
                 Destroy(other.gameObject);
                 break;
             case "Spike":
-                print("öldün");
-                // Take the user back to last checkpoint 
-                controller2D.GoToLastCheckPoint();
+                controller2D.StopAndGoToLastCheckPoint();
                 break;
             case "Checkpoint":
-                print("checkpointe geldin");
-                //  Update user checkpoint 
-                controller2D.UpdateCheckPoint(other.transform.position);
+                controller2D.UpdateCheckPoint(other.transform);
+                other.enabled = false;
                 break;
         }
     }

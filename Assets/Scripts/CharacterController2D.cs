@@ -19,7 +19,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	private Vector2 lastCheckpoint = new Vector2(0.0f, 0.0f); // Initially this is the starting point
+	[SerializeField] private Transform lastCheckpoint; // Initially this is the starting point
 
 	[Header("Events")]
 	[Space]
@@ -66,7 +66,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float move, bool crouch, bool jump)
 	{
 		// If crouching, check to see if the character can stand up
-		if (!crouch)
+		if (crouch)
 		{
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
@@ -78,7 +78,6 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-
 			// If crouching
 			if (crouch)
 			{
@@ -133,17 +132,20 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}
-
+	
 	// Given a set of coordinates set that as the next starting point 
-	public void UpdateCheckPoint(Vector2 newCheckpoint){
+	public void UpdateCheckPoint(Transform newCheckpoint){
 		print("update checkpoint");
 		lastCheckpoint = newCheckpoint;
 	}
 
-	// Go to last checkpoint will be called when dying and also manually(R button fln)
-	public void GoToLastCheckPoint(){
+	// Go to last checkpoint will be called when dying and also manually(R button)
+	public void StopAndGoToLastCheckPoint(){
 		print("gotolast checkpoint");
-		// transform translate (lastCheckpoint) gibi bişe
+		// (Try to) Stop moving
+		m_Rigidbody2D.velocity = Vector3.zero;
+		// Go to checkpoint
+		transform.position = lastCheckpoint.position;
 	}
 
 	private void Flip()

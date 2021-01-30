@@ -29,6 +29,10 @@ public class SoundManager : MonoBehaviour
 			Instance = this;
             AudioClipLibrary.Add("Explosion", 0);
             AudioClipLibrary.Add("Footsteps", 1);
+            AudioClipLibrary.Add("ColorChange", 2);
+            AudioClipLibrary.Add("Spike", 3);
+            AudioClipLibrary.Add("Checkpoint", 4);
+            AudioClipLibrary.Add("Spit", 5);
 		}
 		//If an instance already exists, destroy whatever this object is to enforce the singleton.
 		else if (Instance != this)

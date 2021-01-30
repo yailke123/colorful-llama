@@ -12,13 +12,16 @@ public class TriggerAndCollisionManager : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "ColorChanger":
+                SoundManager.Instance.PlaySoundWithName("ColorChange");  
                 GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
                 Destroy(other.gameObject);
                 break;
             case "Spike":
+                SoundManager.Instance.PlaySoundWithName("Spike");  
                 controller2D.StopAndGoToLastCheckPoint();
                 break;
             case "Checkpoint":
+                SoundManager.Instance.PlaySoundWithName("Checkpoint");   
                 controller2D.UpdateCheckPoint(other.transform);
                 other.enabled = false;
                 break;
@@ -32,6 +35,7 @@ public class TriggerAndCollisionManager : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Enemy":
+                SoundManager.Instance.PlaySoundWithName("Spike");  
                 controller2D.StopAndGoToLastCheckPoint();
                 break;
         }

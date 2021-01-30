@@ -7,6 +7,7 @@ namespace Throwing {
         private Queue<BaseThrowable> _pool;
 
         public virtual void Throw(Transform origination) {
+            SoundManager.Instance.PlaySoundWithName("Spit");  
             Transform myTransform = transform;
             myTransform.position = origination.position;
             myTransform.rotation = origination.rotation;

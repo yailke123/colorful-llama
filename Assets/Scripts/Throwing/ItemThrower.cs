@@ -5,6 +5,8 @@ namespace Throwing {
     public class ItemThrower : MonoBehaviour {
         [SerializeField] private SkinManager skinManager;
         [SerializeField] private Transform throwingParent;
+        [SerializeField] private Transform throwingSource;
+        
         private BaseThrowable _throwingItemPrefab;
 
         private Queue<BaseThrowable> _throwablePool;
@@ -26,11 +28,11 @@ namespace Throwing {
             if (_throwablePool.Count > 0) {
                 BaseThrowable headThrowable = _throwablePool.Dequeue();
                 headThrowable.gameObject.SetActive(true);
-                headThrowable.Throw();
+                headThrowable.Throw(throwingSource);
             }
             else {
                 BaseThrowable spawnThrowable = SpawnThrowable();
-                spawnThrowable.Throw();
+                spawnThrowable.Throw(throwingSource);
             }
         }
 

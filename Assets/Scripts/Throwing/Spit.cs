@@ -1,8 +1,13 @@
+using UnityEngine;
+
 namespace Throwing {
     public class Spit : BaseThrowable {
 
-        public override void Throw() {
-            print("I'm thrown!");
+        [SerializeField] private float spitForceMagnitude;
+        
+        public override void Throw(Transform origination) {
+            base.Throw(origination);
+            Rb.AddForce(transform.forward * spitForceMagnitude, ForceMode2D.Impulse);
         }
     }
 }

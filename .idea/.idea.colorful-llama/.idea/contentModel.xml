@@ -9,7 +9,6 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Collectable.cs" t="Include" />
-        <e p="Collector.cs" t="Include" />
         <e p="Editor" t="Include">
           <e p="CustomEditor.cs" t="Include" />
         </e>
@@ -66,9 +65,26 @@
             </e>
           </e>
         </e>
+        <e p="RainMaker" t="Include">
+          <e p="Demo" t="Include">
+            <e p="DemoScript.cs" t="Include" />
+            <e p="DemoScript2D.cs" t="Include" />
+            <e p="DemoScriptStartRainOnSpaceBar.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="RainMakerEditor.cs" t="Include" />
+          </e>
+          <e p="Prefab" t="Include">
+            <e p="BaseRainScript.cs" t="Include" />
+            <e p="RainCollision.cs" t="Include" />
+            <e p="RainScript.cs" t="Include" />
+            <e p="RainScript2D.cs" t="Include" />
+            <e p="RainShader.shader" t="Include" />
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="CharacterController2D.cs" t="Include" />
-          <e p="ItemThrower.cs" t="Include" />
           <e p="Managers" t="Include">
             <e p="SessionManager.cs" t="Include" />
             <e p="SkinManager.cs" t="Include" />
@@ -77,6 +93,12 @@
           <e p="SOScripts" t="Include">
             <e p="SkinConfig.cs" t="Include" />
           </e>
+          <e p="Throwing" t="Include">
+            <e p="BaseThrowable.cs" t="Include" />
+            <e p="ItemThrower.cs" t="Include" />
+            <e p="Spit.cs" t="Include" />
+          </e>
+          <e p="TriggerManager.cs" t="Include" />
         </e>
       </e>
       <e p="colorful-llama.sln" t="IncludeFlat" />

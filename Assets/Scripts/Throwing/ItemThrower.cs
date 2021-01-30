@@ -1,17 +1,54 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Throwing {
     public class ItemThrower : MonoBehaviour {
         [SerializeField] private SkinManager skinManager;
-        private BaseThrowable _throwingItem;
-        [SerializeField] private GameObject throwingParent;
+        [SerializeField] private Transform throwingParent;
+        private BaseThrowable _throwingItemPrefab;
+
+        private Queue<BaseThrowable> _throwablePool;
+
+        private void Awake() {
+            _throwablePool = new Queue<BaseThrowable>(10);
+        }
 
         private void Start() {
-            _throwingItem = skinManager.currentSkinConfig.ThrowingItem;
+            _throwingItemPrefab = skinManager.currentSkinConfig.ThrowingItem;
+            for (int i = 0; i < 10; i++) {
+                BaseThrowable instance = SpawnThrowable();
+                instance.gameObject.SetActive(false);
+                _throwablePool.Enqueue(instance);
+            }
         }
 
         public void ThrowItem() {
-            _throwingItem.Throw();
+            if (_throwablePool.Count > 0) {
+                BaseThrowable headThrowable = _throwablePool.Dequeue();
+                headThrowable.gameObject.SetActive(true);
+                headThrowable.Throw();
+            }
+            else {
+                BaseThrowable spawnThrowable = SpawnThrowable();
+                spawnThrowable.Throw();
+            }
+        }
+
+        private BaseThrowable SpawnThrowable() {
+            BaseThrowable instance = Instantiate(_throwingItemPrefab, Vector3.zero, Quaternion.identity, throwingParent);
+            instance.Init(_throwablePool);
+            return instance;
+        }
+
+        private void Update() {
+            // TODO: Delete
+            if (Input.GetKeyDown("q")) {
+                ThrowItem();
+            }
+
+            if (Input.GetKeyDown("w")) {
+
+            }
         }
         
     }

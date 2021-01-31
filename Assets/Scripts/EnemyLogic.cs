@@ -26,6 +26,7 @@ public class EnemyLogic : MonoBehaviour
             distanceToTravel = -1 * distanceToTravel; 
             distanceTravelled = distanceLimitInSingleDirection - distanceTravelled;
 
+            // Turn around physically
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;

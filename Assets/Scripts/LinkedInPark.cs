@@ -4,8 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 
 public class LinkedInPark : Collectable {
-    [SerializeField] private SubWoofTweener leftWoof;
-    [SerializeField] private SubWoofTweener rightWoof;
+    [SerializeField] private SubWoofTweener[] woofs;
     [SerializeField] private SpriteRenderer dvdRenderer;
     [SerializeField] private Collider2D collider2D;
     
@@ -25,8 +24,9 @@ public class LinkedInPark : Collectable {
     private IEnumerator CollectRoutine() {
         yield return dvdRenderer.DOFade(0, 0.45f).WaitForCompletion();
         dvdRenderer.gameObject.SetActive(false);
-        leftWoof.BoomTheWoof();
-        rightWoof.BoomTheWoof();
+        foreach (SubWoofTweener subWoofTweener in woofs) {
+            subWoofTweener.BoomTheWoof();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

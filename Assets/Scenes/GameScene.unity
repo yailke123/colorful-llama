@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 378522981}
   - component: {fileID: 378522980}
   m_Layer: 0
-  m_Name: Spike3 (3)
+  m_Name: Spike6
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 542473614}
   - component: {fileID: 542473613}
   m_Layer: 0
-  m_Name: Spike3 (1)
+  m_Name: Spike4
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,7 +1000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542473611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.01, y: 14.64, z: 1.6751984}
+  m_LocalPosition: {x: 9.95, y: 14.57, z: 1.6751984}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 1316375507}
@@ -1249,7 +1249,7 @@ TilemapRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.25, y: 0.13999999, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -2189,21 +2189,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
-  - m_Collider: {fileID: 0}
-    m_ColliderPaths: []
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths: []
   m_VertexDistance: 0.0005
@@ -3297,6 +3283,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ed635b8cff1b459e97ded4eff6bab6c, type: 3}
   - {fileID: 8300000, guid: ba55af027a0394ca994f8725781aaa13, type: 3}
   - {fileID: 8300000, guid: 3facaa03abdbc4e45860d67b604fad9b, type: 3}
+  - {fileID: 8300000, guid: efa108ddaba454f128b8faade5e442be, type: 3}
 --- !u!82 &1277584076
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3309,7 +3296,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3405,7 +3392,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3582,7 +3569,7 @@ GameObject:
   - component: {fileID: 1307165860}
   - component: {fileID: 1307165859}
   m_Layer: 0
-  m_Name: Spike3 (4)
+  m_Name: Spike7
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4251,7 +4238,7 @@ Animator:
   m_GameObject: {fileID: 1446020126}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a81735377adde6e4497cb09808c5eb87, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4822,7 +4809,7 @@ GameObject:
   - component: {fileID: 1781103825}
   - component: {fileID: 1781103824}
   m_Layer: 0
-  m_Name: Spike3 (5)
+  m_Name: Spike8
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5155,7 +5142,7 @@ GameObject:
   - component: {fileID: 2009401462}
   - component: {fileID: 2009401461}
   m_Layer: 0
-  m_Name: Spike3 (2)
+  m_Name: Spike5
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

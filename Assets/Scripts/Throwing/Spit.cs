@@ -4,10 +4,11 @@ namespace Throwing {
     public class Spit : BaseThrowable {
 
         [SerializeField] private float spitForceMagnitude;
+        [SerializeField] private Rigidbody2D rb;
         
         public override void Throw(Transform origination) {
             base.Throw(origination);
-            Rb.AddForce(transform.forward * spitForceMagnitude, ForceMode2D.Impulse);
+            rb.AddForce(transform.right * spitForceMagnitude, ForceMode2D.Impulse);
         }
     }
 }

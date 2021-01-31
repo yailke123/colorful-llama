@@ -10,6 +10,7 @@ public class CharacterAnimationController : MonoBehaviour
     [SerializeField] private float idleTime = 0f;
     
     private static readonly int IdleTime = Animator.StringToHash("IdleTime");
+    private static readonly int isWalking = Animator.StringToHash("isWalking");
 
     // Update is called once per frame
     void Update()
@@ -32,5 +33,9 @@ public class CharacterAnimationController : MonoBehaviour
             idleTime = 0f;
             animator.SetFloat(IdleTime, idleTime);
         }
+    }
+
+    public void SetIsWalking(bool isReallyWalking) {
+        animator.SetBool(isWalking, isReallyWalking);
     }
 }

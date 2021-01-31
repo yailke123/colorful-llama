@@ -26,7 +26,7 @@ public class PostProcessingManager : MonoBehaviour {
         Spline initialCurve = _globalColorGrading.hueVsSatCurve;
         initialCurve.curve.AddKey(0.5f, 0);
 
-        _globalColorGrading.hueVsSatCurve.value = initialCurve;
+        _globalColorGrading.hueVsSatCurve.value.curve = initialCurve.curve;
     }
     
     //TODO: Smooth transitions
@@ -38,7 +38,7 @@ public class PostProcessingManager : MonoBehaviour {
         
         if (_colorVirginity)
         {
-            _globalColorGrading.hueVsSatCurve.value = addedColorGrading.hueVsSatCurve.value;
+            _globalColorGrading.hueVsSatCurve.value.curve.keys = addedColorGrading.hueVsSatCurve.value.curve.keys;
             _colorVirginity = false;
         }
         else
@@ -49,7 +49,7 @@ public class PostProcessingManager : MonoBehaviour {
                 globalInitialCurve.curve.AddKey(key);
             }
 
-            _globalColorGrading.hueVsSatCurve.value = globalInitialCurve;
+            _globalColorGrading.hueVsSatCurve.value.curve = globalInitialCurve.curve;
         }
         
     }

@@ -13,8 +13,9 @@ public class TriggerAndCollisionManager : MonoBehaviour
         {
             case "ColorChanger":
                 SoundManager.Instance.PlaySoundWithName("ColorChange");  
-                GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
-                Destroy(other.gameObject);
+                other.gameObject.GetComponent<Collectable>().Collect();
+                // GetComponent<SpriteRenderer>().color = other.gameObject.GetComponent<SpriteRenderer>().color;
+                // Destroy(other.gameObject);
                 break;
             case "Spike":
                 SoundManager.Instance.PlaySoundWithName("Spike");  

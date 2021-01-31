@@ -12,6 +12,9 @@ public class EnemyLogic : MonoBehaviour
     private const float distanceLimitInSingleDirection = 3f;
     private const float speedMultiplier = 2;
 
+    public bool doesThrowSpike = false;
+    public GameObject spikeObject;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +24,9 @@ public class EnemyLogic : MonoBehaviour
         if(distanceToTravel.magnitude + distanceTravelled > distanceLimitInSingleDirection){
             currentDirection = -1 * currentDirection; 
             distanceToTravel = -1 * distanceToTravel; 
-            distanceTravelled = distanceLimitInSingleDirection - distanceTravelled ;
+            distanceTravelled = distanceLimitInSingleDirection - distanceTravelled;
+            if(doesThrowSpike)
+                throwSpike();
         }
 
         transform.Translate(distanceToTravel);
@@ -30,5 +35,13 @@ public class EnemyLogic : MonoBehaviour
 
     public void Die(){
         Destroy (gameObject);
+    }
+
+    private void throwSpike(){  
+        // TODO add sound effect?      
+        GameObject spikeInstance = Instantiate(spikeObject, transform.position, Quaternion.identity);
+        Rigidbody2D spikeRigidBody = spikeInstance.GetComponent<Rigidbody2D>();
+        spikeRigidBody.AddForce(gameObject.transform.forward * 10f);
+        Destroy(spikeInstance, 2f);
     }
 }

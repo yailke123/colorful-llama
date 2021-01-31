@@ -25,6 +25,11 @@ public class EnemyLogic : MonoBehaviour
             currentDirection = -1 * currentDirection; 
             distanceToTravel = -1 * distanceToTravel; 
             distanceTravelled = distanceLimitInSingleDirection - distanceTravelled;
+
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+
             if(doesThrowSpike)
                 throwSpike();
         }

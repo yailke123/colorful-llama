@@ -35,6 +35,9 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	private bool _isLeftGround = false;
+	private bool _jumpVirginity = true;
+	
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -78,9 +81,21 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
+		if (!m_Grounded) {
+			_isLeftGround = true;
+		}
+		
+		// Landed
+		if (characterAnimationController.IsAirborneAnimPlaying() && _isLeftGround && m_Grounded) {
+			characterAnimationController.SetIsJumping(false);
+			_isLeftGround = false;
+			_jumpVirginity = true;
+		}
+
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
+
 			// If crouching
 			if (crouch)
 			{
@@ -142,7 +157,14 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			SoundManager.Instance.PlaySoundWithName("Jump");   
+			SoundManager.Instance.PlaySoundWithName("Jump");
+			
+			if (_jumpVirginity) {
+				characterAnimationController.TriggerJumpAnim();
+				_jumpVirginity = false;
+			}
+			
+			characterAnimationController.SetIsJumping(true);
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

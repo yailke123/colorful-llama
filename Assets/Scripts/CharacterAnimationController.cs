@@ -11,6 +11,8 @@ public class CharacterAnimationController : MonoBehaviour
     
     private static readonly int IdleTime = Animator.StringToHash("IdleTime");
     private static readonly int isWalking = Animator.StringToHash("isWalking");
+    private static readonly int isJumping = Animator.StringToHash("isAirborne");
+    private static readonly int JumpTrigger = Animator.StringToHash("jumpTrigger");
 
     // Update is called once per frame
     void Update()
@@ -37,5 +39,17 @@ public class CharacterAnimationController : MonoBehaviour
 
     public void SetIsWalking(bool isReallyWalking) {
         animator.SetBool(isWalking, isReallyWalking);
+    }
+
+    public void SetIsJumping(bool isReallyJumping) {
+        animator.SetBool(isJumping, isReallyJumping);
+    }
+
+    public void TriggerJumpAnim() {
+        animator.SetTrigger(JumpTrigger);
+    }
+
+    public bool IsAirborneAnimPlaying() {
+        return animator.GetBool(isJumping);
     }
 }

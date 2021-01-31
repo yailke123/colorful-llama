@@ -2623,7 +2623,7 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 697332345}
   m_CeilingCheck: {fileID: 258372677}
-  m_CrouchDisableCollider: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 1446020130}
   throwSource: {fileID: 1385128666}
   lastCheckpoint: {fileID: 1500909352}
   OnLandEvent:

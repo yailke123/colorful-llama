@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Throwing {
     public abstract class BaseThrowable : MonoBehaviour {
-        [SerializeField] protected Rigidbody2D Rb;
         private Queue<BaseThrowable> _pool;
 
         public virtual void Throw(Transform origination) {

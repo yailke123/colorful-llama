@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176335336159518401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.447792, y: -0.45081928, z: -1.949699}
-  m_LocalScale: {x: 0.0679128, y: 0.0679128, z: 0.0679128}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dad2c0ffae9cfd64a8d6ea74ea0603b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc7f90ca0c584184493f44359b09cf35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,15 +97,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7546081967404060425
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -119,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06498718, y: 0.009373188}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.2, y: 12.6}
+    oldSize: {x: 0.92, y: 0.24}
     newSize: {x: 9.2, y: 12.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.2, y: 12.6}
+  m_Size: {x: 0.85006714, y: 0.2766695}
   m_EdgeRadius: 0
 --- !u!114 &176335336159518400
 MonoBehaviour:
@@ -144,5 +144,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0e03421c2548959dd576b106374e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rb: {fileID: -148056944861189344}
-  spitForceMagnitude: 500
+  spitForceMagnitude: 0.11
+  rb: {fileID: -148056944861189344}

@@ -73,6 +73,15 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+	// Play the sound effect with the given name from Sounds folder.
+    public void PlayMusicWithName(string effectName){
+        if(AudioClipLibrary.ContainsKey(effectName)){
+            int AudioClipIndex = AudioClipLibrary[effectName];
+			MusicSource.clip = AudioClipArray[AudioClipIndex];
+			MusicSource.Play();
+        }
+    }
+
 	// Play a random clip from an array, and randomize the pitch slightly.
 	public void RandomSoundEffect(params AudioClip[] clips)
 	{

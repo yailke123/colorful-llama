@@ -17,7 +17,7 @@ public class LinkedInPark : Collectable {
     }
 
     public override void Collect() {
-        SoundManager.Instance.PlaySoundWithName("LinkedInPark");  
+        SoundManager.Instance.PlayMusicWithName("LinkedInPark");  
         collider2D.enabled = false;
         StartCoroutine(CollectRoutine());
     }

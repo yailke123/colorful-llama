@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7840302234929206418
+--- !u!114 &-8365838980994942149
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -895,7 +895,34 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.5080972
+          time: 0.25039312
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.2504931
+          value: 0.5
+          inSlope: -0.04612284
+          outSlope: -0.04612284
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.40039447
+          value: 0.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.40049446
           value: 0
           inSlope: 0
           outSlope: 0
@@ -943,25 +970,25 @@ MonoBehaviour:
       - 0
       - 0
       - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
-      - 0
+      - 0.4996946
+      - 0.49943587
+      - 0.4992409
+      - 0.4991038
+      - 0.49901873
+      - 0.49897978
+      - 0.49898106
+      - 0.49901673
+      - 0.49908093
+      - 0.49916774
+      - 0.49927133
+      - 0.4993858
+      - 0.4995053
+      - 0.49962395
+      - 0.49973586
+      - 0.4998352
+      - 0.49991605
+      - 0.49997255
+      - 0.49999884
       - 0
       - 0
       - 0
@@ -1330,7 +1357,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Global
+  m_Name: OnlyGreen - Kopya
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -7840302234929206418}
+  - {fileID: -8365838980994942149}

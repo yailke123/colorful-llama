@@ -22,6 +22,8 @@ public class CharacterController2D : MonoBehaviour
 
 	[SerializeField] private Transform lastCheckpoint; // Initially this is the starting point
 
+	[SerializeField] private CharacterAnimationController characterAnimationController;
+
 	[Header("Events")]
 	[Space]
 
@@ -107,10 +109,17 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 
+			if (Mathf.Abs(move) > 0) {
+				characterAnimationController.SetIsWalking(true);
+			}
+			else if (Mathf.Abs(move) == 0) {
+				characterAnimationController.SetIsWalking(false);
+			}
+
 			// If we are moving and on the ground make footstep sounds
 			if(m_Grounded && Mathf.Abs(move) > 0){
-				SoundManager.Instance.PlaySoundWithName("Footsteps", true);   
-			}
+				SoundManager.Instance.PlaySoundWithName("Footsteps", true); 
+			} 
 
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);

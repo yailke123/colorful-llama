@@ -3026,6 +3026,7 @@ MonoBehaviour:
   m_CrouchDisableCollider: {fileID: 1446020130}
   throwSource: {fileID: 1385128666}
   lastCheckpoint: {fileID: 0}
+  characterAnimationController: {fileID: 1446020137}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
